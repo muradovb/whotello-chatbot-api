@@ -29,8 +29,7 @@ if(int_flag==0):
 #PRE-PROCESSING
 #Tokenization of words
 from nltk import word_tokenize,sent_tokenize
-sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences
-word_tokens = nltk.word_tokenize(raw)# converts to list of words
+
 lemmer = nltk.stem.WordNetLemmatizer()
 
 #WordNet is a semantically-oriented dictionary of English included in NLTK.
@@ -104,6 +103,8 @@ def response(user_response):
 
     #analyze pool of answers file
     else:
+        sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences
+        word_tokens = nltk.word_tokenize(raw)# converts to list of words
         robo_response=''
         sent_tokens.append(user_response)
         #generate similarity vectors
